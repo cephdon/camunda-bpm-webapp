@@ -1,0 +1,24 @@
+<!-- # CE - ui/cockpit/plugins/tasks/app/views/dashboard/cleanup-dashboard.html -->
+<section>
+  <div class="inner">
+    <header class="header-empty" ng-if="!cleanupJob">
+      <h1 class="section-title">No history cleanup job scheduled</h1>
+    </header>
+
+    <div class="cleanup-window" ng-if="cleanupJob">
+      <header class="header-empty header-cleanup">
+          <div class="cleanup-message-container">
+            <span state-circle status="cleanupJob.status" incidents="incident"></span>
+            <span class="section-title-2" ng-if="cleanupJob.status === 'scheduled'">
+               Next cleanup will run in {{cleanupJob.relativeDueDate}}
+            </span>
+            <span class="section-title-2" ng-if="cleanupJob.status === 'running'">
+               Cleanup job is running
+            </span>
+          </div>
+          <button class="btn btn-primary" ng-click="cleanupNow()"> Cleanup Now </button>
+      </header>
+    </div>
+  </div>
+</section>
+<!-- / CE - ui/cockpit/plugins/tasks/app/views/dashboard/cleanup-dashboard.html -->

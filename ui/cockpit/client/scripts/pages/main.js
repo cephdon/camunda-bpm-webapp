@@ -6,6 +6,7 @@ var angular = require('camunda-commons-ui/vendor/angular'),
     processes = require('./processes'),
     decisions = require('./decisions'),
     tasks = require('./tasks'),
+    cleanup = require('./cleanup'),
     processDefinitionModule = require('./processDefinition'),
     processInstanceModule = require('./processInstance'),
     decisionDefinitionModule = require('./decisionDefinition'),
@@ -22,5 +23,6 @@ pagesModule.config(dashboard);
 pagesModule.config(processes);
 pagesModule.config(decisions);
 pagesModule.config(tasks);
+pagesModule.config(cleanup);
 
 module.exports = pagesModule;
